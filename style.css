@@ -1,5 +1,6 @@
 body{
 	background-color: gainsboro;
+	font-family: 'Courier New', Courier, monospace;
 }
 #title{
 	color: red;
@@ -11,14 +12,14 @@ body{
 #word-display{
 	background-color:darkgray;
 	height: 50px;
-	width: 20%;
-	margin-left: 40%;
-	margin-right: 40%;
+	width: 40%;
+	margin-left: 30%;
+	margin-right: 30%;
 }
 #word-text{
 	color: white;
 	padding: 5px;
-	text-align: center;
+	padding-left: 5%;
 }
 #input{
 
