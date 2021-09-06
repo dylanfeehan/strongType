@@ -8,6 +8,7 @@ const words = ["for", "each", "while", "java", "python", "int", "boolean", "doub
 const wordsDisplay = document.querySelector('#words');
 
 function init(){
+	console.log("inside of init");
 	setInterval(countUp, 1000); // for counter.
 	input.addEventListener('input', checkMatch);
 	wordDisplayAndKeyword(i);
