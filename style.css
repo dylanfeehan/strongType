@@ -21,14 +21,19 @@ body{
 	padding: 5px;
 	padding-left: 5%;
 }
-#input{
-
+#words{
+	padding-left: 2.5%;
+	padding-top: 10px;
 }
 #form{
+
+}
+#input{
 	width: 15%;
 	margin-left: 42.5%;
 	margin-right: 42.5%;
 	margin-top: 1%;
+	border-color: red;
 }
 #time{
 	text-align: center;

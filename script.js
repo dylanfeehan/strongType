@@ -1,14 +1,34 @@
 window.addEventListener('load', init);
 const timeDisplay = document.querySelector('#time');
+const input = document.querySelector('#input');
 let time = 0;
-//sconst words = ["for", "each", "while", "java", "python", "int", "boolean", "double", "javascript"];
-//const wordsDisplay = document.querySelector('#words');
+let i = 0;
+let keyword = "";
+const words = ["for", "each", "while", "java", "python", "int", "boolean", "double", "javascript", "for", "each", "while", "java", "python", "int", "boolean", "double", "javascript"];
+const wordsDisplay = document.querySelector('#words');
 
 function init(){
-	setInterval(countUp, 1000);
-	//wordsDisplay.innerHTML = words[0];
+	setInterval(countUp, 1000); // for counter.
+	input.addEventListener('input', checkMatch);
+	wordDisplayAndKeyword(i);
+	
 }
 function countUp(){
 	time++;
-	timeDisplay.innerHTML = time;
+	timeDisplay.innerHTML = time + "s";
+}
+function checkMatch(){
+	if(input.value === keyword){
+		input.value = "";
+		updateWords();
+	}
+}
+function updateWords(){
+	console.log("update words")
+	wordDisplayAndKeyword(++i);
+}
+function wordDisplayAndKeyword(i){
+	console.log("word dislpay and keyword called with " + i);
+	wordsDisplay.innerHTML = words[i] + " " + words[i + 1] + " " + words[i + 2] + " " + words[i + 3]; // words 
+	keyword = words[i]; // to match
 }
