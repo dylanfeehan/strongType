@@ -1,6 +1,7 @@
 window.addEventListener('load', init);
 const timeDisplay = document.querySelector('#time');
 const input = document.querySelector('#input');
+let barWidth = 100;
 let time = 0;
 let i = 0;
 let keyword = "";
@@ -24,11 +25,27 @@ function checkMatch(){
 	}
 }
 function updateWords(){
-	console.log("update words")
 	wordDisplayAndKeyword(++i);
 }
 function wordDisplayAndKeyword(i){
-	console.log("word dislpay and keyword called with " + i);
 	wordsDisplay.innerHTML = words[i] + " " + words[i + 1] + " " + words[i + 2] + " " + words[i + 3]; // words 
 	keyword = words[i]; // to match
+	// if(i > 0){
+	// 	var bar = document.getElementById('progress-bar');
+	// 	var length = words.length;
+	// 	var index = i;
+	// 	var percentage = (i / 5) * 100;
+	// 	console.log("percentage " + percentage);
+	// 	bar.style.borderLeft = percentage + "px solid green";
+	// 	bar.style.width = barWidth - percentage + "px";
+	// 	barWidth = barWidth - percentage;
+	// 	console.log(barWidth);
+	// }
+	
+	if(i > 0){
+		console.log("updating progress bar");
+		let bar = document.getElementById('bar');
+		percentageDone = (i / 18) * 100;
+		bar.style.width = percentageDone + "%";
+	}
 }
