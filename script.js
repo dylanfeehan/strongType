@@ -1,10 +1,19 @@
+// next mvp: add a smoother ending
+/*
+no undefined
+ends when it should
+ideas: 
+	have the last of the words be the empty string
+	then add logic: if i = num words, stop?
+*/
+
 window.addEventListener('load', init);
 const timeDisplay = document.querySelector('#time');
 const input = document.querySelector('#input');
 let time = 0;
 let i = 0;
 let keyword = "";
-const words = ["for", "each", "while", "java", "python", "int", "boolean", "double", "javascript", "for", "each", "while", "java", "python", "int", "boolean", "double", "javascript"];
+const words = ["for ", "each ", "while ", "java ", "python ", "int ", "boolean ", "double ", "javascript ", "for ", "each ", "while ", "java ", "python ", "int ", "boolean ", "double ", "javascript ", "", "", "", "", ""];
 const wordsDisplay = document.querySelector('#words');
 
 function init(){
