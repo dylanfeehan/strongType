@@ -13,16 +13,25 @@ const input = document.querySelector('#input');
 let time = 0;
 let i = 0;
 let keyword = "";
+let timerGoing = false;
 const words = ["for ", "each ", "while ", "java ", "python ", "int ", "boolean ", "double ", "javascript ", "for ", "each ", "while ", "java ", "python ", "int ", "boolean ", "double ", "javascript ", "", "", "", "", ""];
 const wordsDisplay = document.querySelector('#words');
 
 function init(){
 	console.log("inside of init");
-	setInterval(countUp, 1000); // for counter.
 	input.addEventListener('input', checkMatch);
+	input.addEventListener('input', startTimer)
 	wordDisplayAndKeyword(i);
 	
 }
+
+function startTimer(){
+	if(!timerGoing){
+		setInterval(countUp, 1000);
+		timerGoing = true;
+	}
+}
+
 function countUp(){
 	time++;
 	timeDisplay.innerHTML = time + "s";
