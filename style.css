@@ -60,3 +60,11 @@ body{
 	height: 20px;
 	width: 0;
 }
+#game-over{
+	text-align: center;
+}
+#reset{
+	width: 4%;
+	margin-left: 48%;
+	visibility: hidden;
+}

@@ -1,21 +1,15 @@
-// next mvp: add a smoother ending
-/*
-no undefined
-ends when it should
-ideas: 
-	have the last of the words be the empty string
-	then add logic: if i = num words, stop?
-*/
-
 window.addEventListener('load', init);
 const timeDisplay = document.querySelector('#time');
 const input = document.querySelector('#input');
+const resetButton = document.querySelector('#reset');
 let time = 0;
 let i = 0;
 let keyword = "";
 let timerGoing = false;
-const words = ["for ", "each ", "while ", "java ", "python ", "int ", "boolean ", "double ", "javascript ", "for ", "each ", "while ", "java ", "python ", "int ", "boolean ", "double ", "javascript", "", "", "", "", ""];
+const wordsa = ["for ", "each ", "while ", "java ", "python ", "int ", "boolean ", "double ", "javascript ", "for ", "each ", "while ", "java ", "python ", "int ", "boolean ", "double ", "javascript", "", "", "", "", ""];
+const words = ["python ", "int ", "boolean ", "double ", "javascript", "", "", "", "", ""];
 const wordsDisplay = document.querySelector('#words');
+const gameOver = document.querySelector('#game-over-message');
 let timer = setInterval(countUp, 10000000000000000);
 
 
@@ -42,9 +36,11 @@ function checkMatch(){
 	if(input.value === keyword){
 		input.value = "";
 		updateWords();
-		if(i === words.length - 6){
-			console.log("true");
+		if(i === words.length - 5){
 			clearInterval(timer);
+			//timerGoing = false;
+			gameOver.innerHTML = "Score: " + time + ", WPM: " + Math.floor(((words.length - 5)/(time/60)));
+			resetButton.style.visibility = 'visible';
 		}
 	}
 }
@@ -61,4 +57,13 @@ function wordDisplayAndKeyword(i){
 		percentageDone = (i / (words.length - 5)) * 100;
 		bar.style.width = percentageDone + "%";
 	}
+}
+function resetGame(){
+	console.log('reset called');
+	
+	time = 0;
+	i = 0;
+	wordDisplayAndKeyword(i);
+	timeDisplay.innerHTML = time + "s";
+	timerGoing = false;
 }
