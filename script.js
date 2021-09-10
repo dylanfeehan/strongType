@@ -39,7 +39,7 @@ function checkMatch(){
 		if(i === words.length - 5){
 			clearInterval(timer);
 			//timerGoing = false;
-			gameOver.innerHTML = "Score: " + time + ", WPM: " + Math.floor(((words.length - 5)/(time/60)));
+			gameOver.innerHTML = "Game over!! WPM: " + Math.floor(((words.length - 5)/(time/60)));
 			resetButton.style.visibility = 'visible';
 		}
 	}
